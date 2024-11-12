@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winzy - Domina tus Finanzas Jugando</title>
+    <style>
+        :root {
+            --primary: #8055FE;
+            --accent: #FF9051;
+            --accent-2: #09CACA;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .logo-container {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #6039fe);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: #ff7a33;
+        }
+
+        .secondary-button {
+            background: var(--accent-2);
+        }
+
+        .secondary-button:hover {
+            background: #08b5b5;
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-container {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="logo-container">
+            <img src="logo.png" alt="FinanzaSmart Logo">
+        </div>
+        <h1>WINZY</h1>
+        <p>Transforma tu mentalidad financiera mientras te diviertes. Aprende, crece y alcanza la libertad financiera.</p>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <button class="cta-button">¡Descarga Ahora!</button>
+    </section>
+
+    <section class="features">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">¿Por qué FinanzaSmart?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Aprende Jugando</h3>
+                <p>Domina conceptos financieros complejos de manera divertida y práctica</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mentalidad de Éxito</h3>
+                <p>Desarrolla hábitos y actitudes que te llevarán al éxito financiero</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mensajes Inspiradores</h3>
+                <p>Recibe motivación diaria para mantener tu enfoque en tus metas financieras</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="cta-button secondary-button">Conoce Más</button>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Gracias a FinanzaSmart, ahora entiendo mejor cómo manejar mi dinero. ¡Es increíble!"</p>
+                <span class="testimonial-author">- María G.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"La mejor inversión que he hecho. Los conceptos son claros y la app es super entretenida."</p>
+                <span class="testimonial-author">- Carlos R.</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"Los mensajes diarios me mantienen motivado. Mi mentalidad sobre el dinero ha cambiado totalmente."</p>
+                <span class="testimonial-author">- Ana P.</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 WINZY. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
