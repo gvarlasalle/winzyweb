@@ -307,24 +307,5 @@
     <footer>
         <p>© 2024 WINZY. Todos los derechos reservados.</p>
     </footer>
-
-       <!-- Audio -->
-    <audio autoplay class="hidden-audio">
-        <source src="audio.mp3" type="audio/mp3">
-    </audio>
-    
-    <script>
-        // Script para verificar si ya se reprodujo antes
-        if (localStorage.getItem('audioPlayed')) {
-            document.querySelector('audio').remove();
-        } else {
-            document.querySelector('audio').addEventListener('ended', function() {
-                localStorage.setItem('audioPlayed', 'true');
-                this.remove();
-            });
-        }
-    </script>
-        
-    <!-- Audio -->
 </body>
 </html>
