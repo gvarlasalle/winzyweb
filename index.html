@@ -14,6 +14,25 @@
             --light: #f8fafc;
         }
 
+        .social-icons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            transition: transform 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: var(--accent);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -175,6 +194,14 @@
             color: var(--accent);
         }
 
+         .testimonials .social-icon {
+            color: white;
+        }
+
+        .testimonials .social-icon:hover {
+            color: var(--accent);
+        }
+
         footer {
             background: var(--primary);
             color: white;
@@ -212,7 +239,7 @@
                 Tu navegador no soporta el elemento de video.
             </video>
         </div>
-        <button class="cta-button">¡Probar Demo!</button>
+        <a href="https://winzy-513098619098.us-central1.run.app" class="cta-button">¡Probar Demo!</a>
     </section>
 
     <section class="features">
@@ -231,8 +258,16 @@
                 <p>Recibe motivación diaria para mantener tu enfoque en tus metas financieras</p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 3rem;">
-            <button class="cta-button secondary-button">Conoce Más</button>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61568830238429&mibextid=ZbWKwL" target="_blank" class="social-icon">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/winzyjf/profilecard/?igsh=MTFjeG13M3ZtbWdkcw==" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@wizyjf?_t=8rX5MTfAxVg&_r=1" target="_blank" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
         </div>
     </section>
 
