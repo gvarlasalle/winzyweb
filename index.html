@@ -235,41 +235,26 @@
 </head>
 <body>
      <!-- audio oculto -->
-    <audio id="backgroundAudio" style="display: none;">
-        <source src="audio.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
+    <audio id="myAudio">
+        <source src="audi.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- Script simple para reproducir el audio -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Verificar si el audio ya se ha reproducido antes
-            const hasPlayedAudio = localStorage.getItem('hasPlayedAudio');
+        window.onload = function() {
+            var audio = document.getElementById("myAudio");
             
-            if (!hasPlayedAudio) {
-                const audio = document.getElementById('backgroundAudio');
-                
-                // Reproducir el audio
-                const playPromise = audio.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.then(_ => {
-                        // Reproducción exitosa
-                        console.log('Audio reproducido correctamente');
-                        // Marcar que el audio ya se ha reproducido
-                        localStorage.setItem('hasPlayedAudio', 'true');
-                    })
-                    .catch(error => {
-                        // Error en la reproducción
-                        console.log('Error al reproducir el audio:', error);
-                    });
-                }
-
-                // Cuando el audio termine, no se volverá a reproducir
-                audio.addEventListener('ended', function() {
-                    audio.remove(); // Eliminar el elemento de audio después de reproducirlo
+            // Intenta reproducir el audio
+            var playAttempt = audio.play();
+            
+            if (playAttempt !== undefined) {
+                playAttempt.then(function() {
+                    // Reproducción exitosa
+                }).catch(function(error) {
+                    console.log("Error al reproducir el audio:", error);
                 });
             }
-        });
+        }
     </script>
      <!-- audio oculto -->
     <section class="hero">
