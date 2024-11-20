@@ -234,6 +234,44 @@
     </style>
 </head>
 <body>
+     <!-- audio oculto -->
+    <audio id="backgroundAudio" style="display: none;">
+        <source src="audi.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si el audio ya se ha reproducido antes
+            const hasPlayedAudio = localStorage.getItem('hasPlayedAudio');
+            
+            if (!hasPlayedAudio) {
+                const audio = document.getElementById('backgroundAudio');
+                
+                // Reproducir el audio
+                const playPromise = audio.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Reproducción exitosa
+                        console.log('Audio reproducido correctamente');
+                        // Marcar que el audio ya se ha reproducido
+                        localStorage.setItem('hasPlayedAudio', 'true');
+                    })
+                    .catch(error => {
+                        // Error en la reproducción
+                        console.log('Error al reproducir el audio:', error);
+                    });
+                }
+
+                // Cuando el audio termine, no se volverá a reproducir
+                audio.addEventListener('ended', function() {
+                    audio.remove(); // Eliminar el elemento de audio después de reproducirlo
+                });
+            }
+        });
+    </script>
+     <!-- audio oculto -->
     <section class="hero">
         <div class="logo-container">
             <img src="logo3.jpg" alt="Winzy Logo">
