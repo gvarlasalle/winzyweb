@@ -308,37 +308,44 @@
         <p>© 2024 WINZY. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Audio elemento y script al final del body -->
+       <!-- Audio -->
     <audio id="myAudio" preload="auto">
         <source src="audio.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var audio = document.getElementById('myAudio');
-            
-            // Intenta reproducir el audio
-            var playPromise = audio.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    console.log('Audio reproducido correctamente');
-                }).catch(function(error) {
-                    console.log('Error al reproducir:', error);
-                    // Si falla la reproducción automática, intentamos con el primer clic
-                    document.body.addEventListener('click', function playOnClick() {
-                        audio.play();
-                        // Removemos el evento después del primer clic
-                        document.body.removeEventListener('click', playOnClick);
-                    }, { once: true });
-                });
-            }
+        // Función para reproducir el audio
+        function playAudio() {
+            const audio = document.getElementById('myAudio');
+            const hasPlayed = localStorage.getItem('audioPlayed');
 
-            // Cuando termine de reproducirse, eliminamos el elemento
-            audio.addEventListener('ended', function() {
+            if (!hasPlayed) {
+                audio.play()
+                    .then(function() {
+                        console.log('Audio reproducido correctamente');
+                        localStorage.setItem('audioPlayed', 'true');
+                    })
+                    .catch(function(error) {
+                        console.log('Error al reproducir:', error);
+                    });
+
+                // Cuando termine de reproducirse
+                audio.addEventListener('ended', function() {
+                    audio.remove();
+                });
+            } else {
+                // Si ya se reprodujo antes, removemos el elemento de audio
                 audio.remove();
-            });
-        });
+            }
+        }
+
+        // Reproducir cuando la página esté completamente cargada
+        if (document.readyState === 'complete') {
+            playAudio();
+        } else {
+            window.addEventListener('load', playAudio);
+        }
     </script>
+    <!-- Audio -->
 </body>
 </html>
