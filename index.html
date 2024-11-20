@@ -307,5 +307,38 @@
     <footer>
         <p>© 2024 WINZY. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Audio elemento y script al final del body -->
+    <audio id="myAudio" preload="auto">
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('myAudio');
+            
+            // Intenta reproducir el audio
+            var playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    console.log('Audio reproducido correctamente');
+                }).catch(function(error) {
+                    console.log('Error al reproducir:', error);
+                    // Si falla la reproducción automática, intentamos con el primer clic
+                    document.body.addEventListener('click', function playOnClick() {
+                        audio.play();
+                        // Removemos el evento después del primer clic
+                        document.body.removeEventListener('click', playOnClick);
+                    }, { once: true });
+                });
+            }
+
+            // Cuando termine de reproducirse, eliminamos el elemento
+            audio.addEventListener('ended', function() {
+                audio.remove();
+            });
+        });
+    </script>
 </body>
 </html>
