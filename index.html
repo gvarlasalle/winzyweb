@@ -14,25 +14,7 @@
             --light: #f8fafc;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 3rem;
-        }
-
-        .social-icon {
-            color: var(--primary);
-            font-size: 2rem;
-            transition: transform 0.3s, color 0.3s;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-5px);
-            color: var(--accent);
-        }
-
+        /* Previous styles remain the same */
         * {
             margin: 0;
             padding: 0;
@@ -117,14 +99,6 @@
             background: #ff7a33;
         }
 
-        .secondary-button {
-            background: var(--accent-2);
-        }
-
-        .secondary-button:hover {
-            background: #08b5b5;
-        }
-
         .features {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -156,6 +130,37 @@
         .feature-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: #ff7a33;
+        }
+
+        .social-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
         }
 
         .testimonials {
@@ -194,14 +199,6 @@
             color: var(--accent);
         }
 
-         .testimonials .social-icon {
-            color: white;
-        }
-
-        .testimonials .social-icon:hover {
-            color: var(--accent);
-        }
-
         footer {
             background: var(--primary);
             color: white;
@@ -222,6 +219,16 @@
             .logo-container {
                 width: 180px;
                 height: 180px;
+            }
+
+            .social-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .social-icon svg {
+                width: 25px;
+                height: 25px;
             }
         }
     </style>
@@ -258,17 +265,25 @@
                 <p>Recibe motivación diaria para mantener tu enfoque en tus metas financieras</p>
             </div>
         </div>
+        
         <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61568830238429&mibextid=ZbWKwL" target="_blank" class="social-icon">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/winzyjf/profilecard/?igsh=MTFjeG13M3ZtbWdkcw==" target="_blank" class="social-icon">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@wizyjf?_t=8rX5MTfAxVg&_r=1" target="_blank" class="social-icon">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
+    <a href="https://www.facebook.com/profile.php?id=61568830238429&mibextid=ZbWKwL" target="_blank" class="social-icon" title="Facebook">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+        </svg>
+    </a>
+    <a href="https://www.instagram.com/winzyjf/profilecard/?igsh=MTFjeG13M3ZtbWdkcw==" target="_blank" class="social-icon" title="Instagram">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+        </svg>
+    </a>
+    <a href="https://www.tiktok.com/@wizyjf?_t=8rX5MTfAxVg&_r=1" target="_blank" class="social-icon" title="TikTok">
+        <svg viewBox="0 0 24 24">
+            <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+        </svg>
+    </a>
+    </div>
+        
     </section>
 
     <section class="testimonials">
