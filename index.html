@@ -309,43 +309,22 @@
     </footer>
 
        <!-- Audio -->
-    <audio id="myAudio" preload="auto">
-        <source src="audio.mp3" type="audio/mpeg">
+    <audio autoplay class="hidden-audio">
+        <source src="audio.mp3" type="audio/mp3">
     </audio>
-
+    
     <script>
-        // Función para reproducir el audio
-        function playAudio() {
-            const audio = document.getElementById('myAudio');
-            const hasPlayed = localStorage.getItem('audioPlayed');
-
-            if (!hasPlayed) {
-                audio.play()
-                    .then(function() {
-                        console.log('Audio reproducido correctamente');
-                        localStorage.setItem('audioPlayed', 'true');
-                    })
-                    .catch(function(error) {
-                        console.log('Error al reproducir:', error);
-                    });
-
-                // Cuando termine de reproducirse
-                audio.addEventListener('ended', function() {
-                    audio.remove();
-                });
-            } else {
-                // Si ya se reprodujo antes, removemos el elemento de audio
-                audio.remove();
-            }
-        }
-
-        // Reproducir cuando la página esté completamente cargada
-        if (document.readyState === 'complete') {
-            playAudio();
+        // Script para verificar si ya se reprodujo antes
+        if (localStorage.getItem('audioPlayed')) {
+            document.querySelector('audio').remove();
         } else {
-            window.addEventListener('load', playAudio);
+            document.querySelector('audio').addEventListener('ended', function() {
+                localStorage.setItem('audioPlayed', 'true');
+                this.remove();
+            });
         }
     </script>
+        
     <!-- Audio -->
 </body>
 </html>
