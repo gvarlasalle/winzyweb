@@ -234,29 +234,6 @@
     </style>
 </head>
 <body>
-     <!-- audio oculto -->
-    <audio id="myAudio">
-        <source src="audio.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Script simple para reproducir el audio -->
-    <script>
-        window.onload = function() {
-            var audio = document.getElementById("myAudio");
-            
-            // Intenta reproducir el audio
-            var playAttempt = audio.play();
-            
-            if (playAttempt !== undefined) {
-                playAttempt.then(function() {
-                    // Reproducción exitosa
-                }).catch(function(error) {
-                    console.log("Error al reproducir el audio:", error);
-                });
-            }
-        }
-    </script>
-     <!-- audio oculto -->
     <section class="hero">
         <div class="logo-container">
             <img src="logo3.jpg" alt="Winzy Logo">
